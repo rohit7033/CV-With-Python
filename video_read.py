@@ -29,13 +29,13 @@ for i in range (1,total_frames):
     cv2.imwrite(image_out_name,image)     # save frame as JPEG file
     
     with open('output.txt', 'a') as output_f:
-      p = subprocess.Popen(['/home/rohit/models/tutorials/image/imagenet/dist/test1/test1',input_to_exe],stdout=output_f,stderr=output_f)
+      p = subprocess.Popen(['/home/rohit/models/tutorials/image/imagenet/dist/test2',input_to_exe],stdout=output_f,stderr=output_f)
       p.wait()
     #if cv2.waitKey(10) == 27:                     # exit if Escape is hit
     #    break
       output_f.write('\nThis is the \n'+str(k)+'th file for you\n\n')
     output_f.close() 
-  if i ==  total_frames :
+  if i == total_frames: # fps*8 :
     #count += 1
     break
   i=i+1
